@@ -1,3 +1,10 @@
+![ag-word-cloud](https://user-images.githubusercontent.com/4659608/30762233-d4a36136-9fe9-11e7-8788-831558cae077.png)
+
+[![NPM](https://nodei.co/npm/angular4-word-cloud.png?compact=true)](https://nodei.co/npm/angular4-word-cloud/)
+[![Coverage Status](https://coveralls.io/repos/github/alhazmy13/Angular4-word-cloud/badge.svg?branch=master)](https://coveralls.io/github/alhazmy13/Angular4-word-cloud?branch=master)
+
+
+
 # Angular4 Word Cloud
 
 ## Installation
