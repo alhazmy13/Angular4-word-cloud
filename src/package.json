@@ -1,0 +1,28 @@
+{
+  "name": "angular4-word-cloud",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alhazmy13/Angular4-word-cloud"
+  },
+  "author": {
+    "name": "Abdullah Alhazmy",
+    "email": "me@alhazmy13.net"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alhazmy13/Angular4-word-cloud/issues"
+  },
+  "main": "angular4-word-cloud.umd.js",
+  "module": "angular4-word-cloud.js",
+  "jsnext:main": "angular4-word-cloud.js",
+  "typings": "angular4-word-cloud.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
