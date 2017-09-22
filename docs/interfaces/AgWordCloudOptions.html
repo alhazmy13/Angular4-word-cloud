@@ -1,0 +1,667 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular4-word-cloud</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular4-word-cloud</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">angular4-word-cloud</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                                <li class="link">
+                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse "
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AgWordCloudModule.html" >AgWordCloudModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-directives-links"
+                            >
+                            <span class="fa fa-code"></span>
+                            <span>Directives</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-directives-links"
+                            >
+                                <li class="link">
+                                    <a href="../directives/AgWordCloudDirective.html" >AgWordCloudDirective</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/AgWordCloudData.html" >AgWordCloudData</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/AgWordCloudOptions.html"  data-type="entity-link" class="active" >AgWordCloudOptions</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">angular4-word-cloud</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse "
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AgWordCloudModule.html" >AgWordCloudModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#directives-links"
+                   >
+                                   <span class="fa fa-code"></span>
+                                   <span>Directives</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="directives-links"
+                   >
+                                       <li class="link">
+                                           <a href="../directives/AgWordCloudDirective.html" >AgWordCloudDirective</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/AgWordCloudData.html" >AgWordCloudData</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/AgWordCloudOptions.html"  data-type="entity-link" class="active" >AgWordCloudOptions</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>AgWordCloudOptions</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/ag-wordcloud.directive.ts</code>
+        </p>
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#margin">margin</a>
+                                </li>
+                                <li>
+                                        <a href="#settings">settings</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="margin"></a>
+                                        <span class="name"><b>margin</b><a href="#margin"><span class="fa fa-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>margin:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>literal type</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="171" class="link-to-prism">src/ag-wordcloud.directive.ts:171</a></div>
+                                        </td>
+                                    </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="settings"></a>
+                                        <span class="name"><b>settings</b><a href="#settings"><span class="fa fa-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>settings:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>literal type</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="164" class="link-to-prism">src/ag-wordcloud.directive.ts:164</a></div>
+                                        </td>
+                                    </tr>
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import {
+    Directive, ElementRef, Input, OnInit,
+} from &#x27;@angular/core&#x27;;
+import * as D3 from &#x27;d3&#x27;;
+
+declare let d3: any;
+
+@Directive({selector: &#x27;div[AgWordCloud]&#x27;, exportAs: &#x27;ag-word-cloud&#x27;})
+export class AgWordCloudDirective implements OnInit {
+
+    @Input() wordData: AgWordCloudData[];
+    @Input() color: string[] &#x3D; [&#x27;#2BAAE2&#x27;, &#x27;#FF6B8D&#x27;, &#x27;#cecece&#x27;, &#x27;#003E5D&#x27;, &#x27;#22BAA0&#x27;, &#x27;#cecece&#x27;];
+
+    @Input() options: AgWordCloudOptions &#x3D; {
+        settings: {
+            minFontSize: 10,
+            maxFontSize: 100,
+        },
+        margin: {
+            top: 10,
+            right: 10,
+            bottom: 10,
+            left: 10
+        }
+    };
+    @Input() width: number;
+    @Input() height: number;
+    private old_min: number;
+    private old_max: number;
+    private svg: any;
+
+    private element: ElementRef;
+
+    public constructor(element: ElementRef) {
+        this.element &#x3D; element;
+    }
+
+    ngOnInit() {
+        this.setup();
+        this.buildSVG();
+        this.populate();
+    }
+
+    private roundNumber() {
+        const temp &#x3D; this.wordData.map(d &#x3D;&gt; {
+            if (d.color) {
+                return {text: d.text, size: this.scale(d.size), color: d.color};
+            }
+            return {text: d.text, size: this.scale(d.size), color: this.color[Math.floor(Math.random() * this.color.length)]};
+
+        });
+        this.wordData.length &#x3D; 0;
+        this.wordData.push(...temp);
+    }
+
+    private scale(inputY: number): number {
+        const x &#x3D; inputY - this.old_min;
+        const y &#x3D; this.old_max - this.old_min;
+        const percent &#x3D; x / y;
+        return percent * (50 - 10) + 10;
+    }
+
+    private updateMaxMinValues() {
+        this.old_min &#x3D; Number.MAX_VALUE;
+        this.old_max &#x3D; Number.MIN_VALUE;
+        this.wordData.map(res &#x3D;&gt; {
+            if (res.size &lt; this.old_min) {
+                this.old_min &#x3D; res.size;
+            }
+            if (res.size &gt; this.old_max) {
+                this.old_max &#x3D; res.size;
+            }
+        });
+    }
+
+    private setup() {
+        if (!this.width) {
+            this.width &#x3D; this.element.nativeElement.parentElement.offsetWidth - this.options.margin.right - this.options.margin.left;
+        }
+        if (!this.height) {
+            this.height &#x3D; this.width * 0.75 - this.options.margin.top - this.options.margin.bottom;
+        }
+
+
+    }
+
+    private buildSVG() {
+
+        this.svg &#x3D; D3.select(this.element.nativeElement)
+            .append(&#x27;svg&#x27;)
+            .attr(&#x27;width&#x27;, this.width + this.options.margin.left + this.options.margin.right)
+            .attr(&#x27;height&#x27;, this.height + this.options.margin.top + this.options.margin.bottom)
+            .append(&#x27;g&#x27;)
+            .attr(&#x27;transform&#x27;, &#x27;translate(&#x27; + ~~(this.width / 2) + &#x27;,&#x27; + ~~(this.height / 2) + &#x27;)&#x27;);
+    }
+
+    private populate() {
+        if (this.svg) {
+            this.svg.selectAll(&#x27;*&#x27;).remove();
+        }
+        this.updateMaxMinValues();
+        this.roundNumber();
+        const fontFace: string &#x3D; (this.options.settings.fontFace &#x3D;&#x3D; null) ? &#x27;Roboto&#x27; : this.options.settings.fontFace;
+        const fontWeight: string &#x3D; (this.options.settings.fontWeight &#x3D;&#x3D; null) ? &#x27;normal&#x27; : this.options.settings.fontWeight;
+        const spiralType: string &#x3D; (this.options.settings.spiral &#x3D;&#x3D; null) ? &#x27;archimedean&#x27; : this.options.settings.spiral;
+        console.log(this.wordData);
+        d3.layout.cloud()
+            .size([this.width, this.height])
+            .words(this.wordData)
+            .padding(5)
+            .rotate(() &#x3D;&gt; (~~(Math.random() * 2) * 90))
+            .font(fontFace)
+            .fontWeight(fontWeight)
+            .fontSize(d &#x3D;&gt; (d.size))
+            .spiral(spiralType)
+            .on(&#x27;end&#x27;, () &#x3D;&gt; {
+                this.drawWordCloud(this.wordData);
+            })
+            .start();
+
+    }
+
+    private drawWordCloud(words) {
+        const tooltip &#x3D; D3.select(this.element.nativeElement)
+            .append(&#x27;div&#x27;)
+            .style(&#x27;position&#x27;, &#x27;absolute&#x27;)
+            .style(&#x27;z-index&#x27;, &#x27;10&#x27;)
+            .style(&#x27;visibility&#x27;, &#x27;hidden&#x27;)
+            .text(&#x27;a simple tooltip&#x27;);
+
+        this.svg
+            .selectAll(&#x27;text&#x27;)
+            .data(words)
+            .enter()
+            .append(&#x27;text&#x27;)
+            .style(&#x27;font-size&#x27;, d &#x3D;&gt; d.size + &#x27;px&#x27;)
+            .style(&#x27;fill&#x27;, (d, i) &#x3D;&gt; {
+                return d.color;
+            })
+            .attr(&#x27;mdTooltip&#x27;, &#x27;ddd&#x27;)
+            .attr(&#x27;text-anchor&#x27;, &#x27;middle&#x27;)
+            .attr(&#x27;transform&#x27;, d &#x3D;&gt; &#x27;translate(&#x27; + [d.x, d.y] + &#x27;)rotate(&#x27; + d.rotate + &#x27;)&#x27;)
+            .attr(&#x27;class&#x27;, &#x27;word-cloud&#x27;)
+            .on(&#x27;mouseover&#x27;, function (d, i) {
+                return tooltip.style(&#x27;visibility&#x27;, &#x27;visible&#x27;).text(&#x27;Count: &#x27; + d.size);
+            })
+            .on(&#x27;mouseout&#x27;, function () {
+                return tooltip.style(&#x27;visibility&#x27;, &#x27;hidden&#x27;);
+            })
+            .text(d &#x3D;&gt; {
+                return d.text;
+            });
+    }
+
+    public update() {
+        this.populate();
+    }
+
+
+}
+
+
+export interface AgWordCloudOptions {
+    settings?: {
+        minFontSize?: number,
+        maxFontSize?: number,
+        fontFace?: string,
+        fontWeight?: string,
+        spiral?: string,
+    };
+    margin?: {
+        top: number,
+        right: number,
+        bottom: number,
+        left: number
+    };
+}
+
+export interface AgWordCloudData {
+    text: string;
+    size: number;
+    color?: string;
+}
+
+</code></pre>
+    </div>
+</div>
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+    </body>
+</html>
