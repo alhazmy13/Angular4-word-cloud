@@ -9,6 +9,8 @@ declare let d3: any;
 export class AgWordCloudDirective implements OnInit {
 
     @Input() wordData: AgWordCloudData[];
+    temp: Array<AgWordCloudData> = [];
+
     @Input() color: string[] = ['#2BAAE2', '#FF6B8D', '#cecece', '#003E5D', '#22BAA0', '#cecece'];
 
     @Input() options: AgWordCloudOptions = {
@@ -46,11 +48,15 @@ export class AgWordCloudDirective implements OnInit {
             if (d.color) {
                 return {text: d.text, size: this.scale(d.size), color: d.color};
             }
-            return {text: d.text, size: this.scale(d.size), color: this.color[Math.floor(Math.random() * this.color.length)]};
+            return {
+                text: d.text,
+                size: this.scale(d.size),
+                color: this.color[Math.floor(Math.random() * this.color.length)]
+            };
 
         });
-        this.wordData.length = 0;
-        this.wordData.push(...temp);
+        this.temp.length = 0;
+        this.temp.push(...temp);
     }
 
     private scale(inputY: number): number {
@@ -75,7 +81,7 @@ export class AgWordCloudDirective implements OnInit {
 
     private setup() {
         if (!this.width) {
-            this.width = this.element.nativeElement.parentElement.offsetWidth - this.options.margin.right - this.options.margin.left;
+            this.width = 500 - this.options.margin.right - this.options.margin.left;
         }
         if (!this.height) {
             this.height = this.width * 0.75 - this.options.margin.top - this.options.margin.bottom;
@@ -103,10 +109,9 @@ export class AgWordCloudDirective implements OnInit {
         const fontFace: string = (this.options.settings.fontFace == null) ? 'Roboto' : this.options.settings.fontFace;
         const fontWeight: string = (this.options.settings.fontWeight == null) ? 'normal' : this.options.settings.fontWeight;
         const spiralType: string = (this.options.settings.spiral == null) ? 'archimedean' : this.options.settings.spiral;
-        console.log(this.wordData);
         d3.layout.cloud()
             .size([this.width, this.height])
-            .words(this.wordData)
+            .words(this.temp)
             .padding(5)
             .rotate(() => (~~(Math.random() * 2) * 90))
             .font(fontFace)
@@ -114,13 +119,14 @@ export class AgWordCloudDirective implements OnInit {
             .fontSize(d => (d.size))
             .spiral(spiralType)
             .on('end', () => {
-                this.drawWordCloud(this.wordData);
+                this.drawWordCloud(this.temp);
             })
             .start();
 
     }
 
     private drawWordCloud(words) {
+        const self = this;
         const tooltip = D3.select(this.element.nativeElement)
             .append('div')
             .style('position', 'absolute')
@@ -142,7 +148,7 @@ export class AgWordCloudDirective implements OnInit {
             .attr('transform', d => 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')')
             .attr('class', 'word-cloud')
             .on('mouseover', function (d, i) {
-                return tooltip.style('visibility', 'visible').text('Count: ' + d.size);
+                return tooltip.style('visibility', 'visible').text('Size: ' + self.getWordSize(d.text));
             })
             .on('mouseout', function () {
                 return tooltip.style('visibility', 'hidden');
@@ -150,6 +156,12 @@ export class AgWordCloudDirective implements OnInit {
             .text(d => {
                 return d.text;
             });
+    }
+
+    getWordSize(word: string): number {
+        const indexOfWord = this.wordData.findIndex(i => i.text === word);
+        if (indexOfWord === -1) return 0;
+        return this.wordData[indexOfWord].size;
     }
 
     public update() {

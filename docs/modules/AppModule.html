@@ -73,22 +73,7 @@
                         </ul>
                     </li>
             
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-components-links"
-                            >
-                            <span class="fa fa-cogs"></span>
-                            <span>Components</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-components-links"
-                            >
-                                <li class="link">
-                                    <a href="../components/AppComponent.html" >AppComponent</a>
-                                </li>
-                        </ul>
-                    </li>
+   
             
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
@@ -145,11 +130,6 @@
                                   <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
                                 </li>
                         </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
                     </li>
             
             
@@ -215,23 +195,7 @@
                                        </li>
                                </ul>
                            </li>
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#components-links"
-                   >
-                                   <span class="fa fa-cogs"></span>
-                                   <span>Components</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="components-links"
-                   >
-                                       <li class="link">
-                                           <a href="../components/AppComponent.html" >AppComponent</a>
-                                       </li>
-                               </ul>
-                           </li>
+                 
                    
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
@@ -291,9 +255,6 @@
                            </li>
                    
                    
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                           </li>
                    
                    
                        </ul>
@@ -411,48 +372,60 @@
         </p>
 
 
-        <div class="container-fluid module">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank" title="Official documentation about module declarations"><span class="fa fa-info-circle"></span></a></h3>
-                    <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="../components/AppComponent.html">AppComponent</a>
-                            </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h3>Bootstrap<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#bootstrap-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
-                    <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="../components/AppComponent.html" >AppComponent</a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
-import { NgModule } from &#x27;@angular/core&#x27;;
-import { Component } from &#x27;@angular/core&#x27;;
-import { platformBrowserDynamic } from &#x27;@angular/platform-browser-dynamic&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import {BrowserModule} from &#x27;@angular/platform-browser&#x27;;
+import {NgModule} from &#x27;@angular/core&#x27;;
+import {Component} from &#x27;@angular/core&#x27;;
+import {platformBrowserDynamic} from &#x27;@angular/platform-browser-dynamic&#x27;;
+import {AgWordCloudModule} from &#x27;../dist/index&#x27;;
+import {AgWordCloudData} from &quot;../dist/ag-wordcloud.directive&quot;;
 
 
 @Component({
-  selector: &#x27;app-component&#x27;,
-  template: &#x60;&lt;sample-component&gt;&lt;/sample-component&gt;&#x60;
+    selector: &#x27;app&#x27;,
+    template: &#x60;
+        &lt;div AgWordCloud [wordData]&#x3D;&quot;wordData&quot;&gt;&lt;/div&gt;&#x60;
 })
-class AppComponent {}
+class AppComponent {
+
+    wordData: Array&lt;AgWordCloudData&gt; &#x3D; [
+        {size: 500, text: &#x27;vitae&#x27;},
+        {size: 301, text: &#x27;amet&#x27;},
+        {size: 123, text: &#x27;sit&#x27;},
+        {size: 321, text: &#x27;eget&#x27;},
+        {size: 231, text: &#x27;quis&#x27;},
+        {size: 123, text: &#x27;sem&#x27;},
+        {size: 346, text: &#x27;massa&#x27;},
+        {size: 107, text: &#x27;nec&#x27;},
+        {size: 436, text: &#x27;sed&#x27;},
+        {size: 731, text: &#x27;semper&#x27;},
+        {size: 80, text: &#x27;scelerisque&#x27;},
+        {size: 96, text: &#x27;egestas&#x27;},
+        {size: 531, text: &#x27;libero&#x27;},
+        {size: 109, text: &#x27;nisl&#x27;},
+        {size: 972, text: &#x27;odio&#x27;},
+        {size: 213, text: &#x27;tincidunt&#x27;},
+        {size: 294, text: &#x27;vulputate&#x27;},
+        {size: 472, text: &#x27;venenatis&#x27;},
+        {size: 297, text: &#x27;malesuada&#x27;},
+        {size: 456, text: &#x27;finibus&#x27;},
+        {size: 123, text: &#x27;tempor&#x27;},
+        {size: 376, text: &#x27;tortor&#x27;},
+        {size: 93, text: &#x27;congue&#x27;},
+        {size: 123, text: &#x27;possit&#x27;},
+    ];
+}
 
 @NgModule({
-  bootstrap: [ AppComponent ],
-  declarations: [ AppComponent ],
-  imports: [ BrowserModule ]
+    bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [BrowserModule, AgWordCloudModule.forRoot()]
 })
-class AppModule {}
+class AppModule {
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 </code></pre>

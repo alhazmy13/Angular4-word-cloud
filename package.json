@@ -73,6 +73,6 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "d3": "^4.10.2"
+    "plugin-typescript": "^7.1.0"
   }
 }

@@ -28,6 +28,18 @@ imports: [
 ]
 ```
 
+Then add the sources to your code (adjust paths as needed).
+
+```html
+<head>
+  ...
+<head>
+<body>
+  ...
+</body>
+  <script src="node_modules/angular4-word-cloud/d3.min.js"></script>
+```
+
 ### How to use
 There are one directive for word cloud: `ag-word-cloud`, to use it just add this block on your html file:
 

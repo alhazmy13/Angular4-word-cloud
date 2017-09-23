@@ -72,23 +72,7 @@
                                 </li>
                         </ul>
                     </li>
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-components-links"
-                            >
-                            <span class="fa fa-cogs"></span>
-                            <span>Components</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-components-links"
-                            >
-                                <li class="link">
-                                    <a href="./components/AppComponent.html" >AppComponent</a>
-                                </li>
-                        </ul>
-                    </li>
+        
             
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
@@ -148,10 +132,7 @@
                     </li>
             
             
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
+                
             
                 </ul>
             
@@ -216,22 +197,7 @@
                                </ul>
                            </li>
                    
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#components-links"
-                   >
-                                   <span class="fa fa-cogs"></span>
-                                   <span>Components</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="components-links"
-                   >
-                                       <li class="link">
-                                           <a href="./components/AppComponent.html" >AppComponent</a>
-                                       </li>
-                               </ul>
-                           </li>
+
                    
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
@@ -290,8 +256,7 @@
                                </ul>
                            </li>
                    
-              
-                   
+                 
                        </ul>
                    
                    </nav>
@@ -313,7 +278,14 @@ $ npm install d3 --save</code></pre><h2 id="api">API</h2>
 // In your App&#39;s module:
 imports: [
    AgWordCloudModule.forRoot()
-]</code></pre><h3 id="how-to-use">How to use</h3>
+]</code></pre><p>Then add the sources to your code (adjust paths as needed).</p>
+<pre class="line-numbers"><code class="language-html">&lt;head&gt;
+  ...
+&lt;head&gt;
+&lt;body&gt;
+  ...
+&lt;/body&gt;
+  &lt;script src=&quot;node_modules/angular4-word-cloud/d3.min.js&quot;&gt;&lt;/script&gt;</code></pre><h3 id="how-to-use">How to use</h3>
 <p>There are one directive for word cloud: <code>ag-word-cloud</code>, to use it just add this block on your html file:</p>
 <pre class="line-numbers"><code class="language-html">&lt;div AgWordCloud 
     #word_cloud_chart=ag-word-cloud 

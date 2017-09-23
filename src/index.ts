@@ -4,7 +4,6 @@ import {AgWordCloudDirective} from './ag-wordcloud.directive';
 
 export * from './ag-wordcloud.directive';
 
-
 @NgModule({
     imports: [
         CommonModule

@@ -1,6 +1,6 @@
 {
   "name": "angular4-word-cloud",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/alhazmy13/Angular4-word-cloud"
@@ -23,7 +23,6 @@
   "peerDependencies": {
     "@angular/core": "^4.0.0",
     "rxjs": "^5.1.0",
-    "d3": "^4.10.2",
     "zone.js": "^0.8.4"
   }
 }

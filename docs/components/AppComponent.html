@@ -355,14 +355,14 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-component</code></td>
+                <td class="col-md-9"><code>app</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;sample-component&gt;&lt;/sample-component&gt;</code></pre></td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div AgWordCloud [wordData]&#x3D;&quot;wordData&quot;&gt;&lt;/div&gt;</code></pre></td>
             </tr>
 
 
@@ -371,6 +371,27 @@
     </table>
 </section>
 
+    <section>
+        <h3 id="index">Index</h3>
+        <table class="table table-sm table-bordered index-table">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                 <a href="#wordData">wordData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
 
 
@@ -378,28 +399,95 @@
 
 
 
+    <section>
+        
+            <h3 id="inputs">
+                Properties
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="wordData"></a>
+                            <span class="name"><b> wordData</b><a href="#wordData"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>wordData:     <code><a href="../interfaces/AgWordCloudData.html" target="_self" >Array&lt;AgWordCloudData&gt;</a></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code><a href="../interfaces/AgWordCloudData.html" target="_self" >Array&lt;AgWordCloudData&gt;</a></code>
+    
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">playground/index.ts:19</a></div>
+                                </td>
+                            </tr>
+    
+    
+                </tbody>
+            </table>
+    </section>
 </div>
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
-import { NgModule } from &#x27;@angular/core&#x27;;
-import { Component } from &#x27;@angular/core&#x27;;
-import { platformBrowserDynamic } from &#x27;@angular/platform-browser-dynamic&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import {BrowserModule} from &#x27;@angular/platform-browser&#x27;;
+import {NgModule} from &#x27;@angular/core&#x27;;
+import {Component} from &#x27;@angular/core&#x27;;
+import {platformBrowserDynamic} from &#x27;@angular/platform-browser-dynamic&#x27;;
+import {AgWordCloudModule} from &#x27;../dist/index&#x27;;
+import {AgWordCloudData} from &quot;../dist/ag-wordcloud.directive&quot;;
 
 
 @Component({
-  selector: &#x27;app-component&#x27;,
-  template: &#x60;&lt;sample-component&gt;&lt;/sample-component&gt;&#x60;
+    selector: &#x27;app&#x27;,
+    template: &#x60;
+        &lt;div AgWordCloud [wordData]&#x3D;&quot;wordData&quot;&gt;&lt;/div&gt;&#x60;
 })
-class AppComponent {}
+class AppComponent {
+
+    wordData: Array&lt;AgWordCloudData&gt; &#x3D; [
+        {size: 500, text: &#x27;vitae&#x27;},
+        {size: 301, text: &#x27;amet&#x27;},
+        {size: 123, text: &#x27;sit&#x27;},
+        {size: 321, text: &#x27;eget&#x27;},
+        {size: 231, text: &#x27;quis&#x27;},
+        {size: 123, text: &#x27;sem&#x27;},
+        {size: 346, text: &#x27;massa&#x27;},
+        {size: 107, text: &#x27;nec&#x27;},
+        {size: 436, text: &#x27;sed&#x27;},
+        {size: 731, text: &#x27;semper&#x27;},
+        {size: 80, text: &#x27;scelerisque&#x27;},
+        {size: 96, text: &#x27;egestas&#x27;},
+        {size: 531, text: &#x27;libero&#x27;},
+        {size: 109, text: &#x27;nisl&#x27;},
+        {size: 972, text: &#x27;odio&#x27;},
+        {size: 213, text: &#x27;tincidunt&#x27;},
+        {size: 294, text: &#x27;vulputate&#x27;},
+        {size: 472, text: &#x27;venenatis&#x27;},
+        {size: 297, text: &#x27;malesuada&#x27;},
+        {size: 456, text: &#x27;finibus&#x27;},
+        {size: 123, text: &#x27;tempor&#x27;},
+        {size: 376, text: &#x27;tortor&#x27;},
+        {size: 93, text: &#x27;congue&#x27;},
+        {size: 123, text: &#x27;possit&#x27;},
+    ];
+}
 
 @NgModule({
-  bootstrap: [ AppComponent ],
-  declarations: [ AppComponent ],
-  imports: [ BrowserModule ]
+    bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [BrowserModule, AgWordCloudModule.forRoot()]
 })
-class AppModule {}
+class AppModule {
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 </code></pre>
@@ -429,8 +517,8 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><sample-component></sample-component></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-component'}];
+        var COMPONENT_TEMPLATE = '<div><div AgWordCloud [wordData]="wordData"></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app'}];
     var DIRECTIVES = [{'name': 'AgWordCloudDirective', 'selector': 'div[AgWordCloud]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
