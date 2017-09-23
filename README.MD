@@ -40,16 +40,14 @@ imports: [
 ]
 ```
 
-Then add the sources to your code (adjust paths as needed).
+Then add add the script to `.angular-cli.json`
 
-```html
-<head>
-  ...
-<head>
-<body>
-  ...
-</body>
-  <script src="node_modules/angular4-word-cloud/d3.min.js"></script>
+
+```json
+"scripts": [
+      ***
+        "../node_modules/angular4-word-cloud/d3.min.js"
+      ]
 ```
 
 ### How to use
