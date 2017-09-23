@@ -1,9 +1,9 @@
 ![ag-word-cloud](https://user-images.githubusercontent.com/4659608/30762233-d4a36136-9fe9-11e7-8788-831558cae077.png)
 
 [![NPM](https://nodei.co/npm/angular4-word-cloud.png?compact=true)](https://nodei.co/npm/angular4-word-cloud/)
+
+
 [![Coverage Status](https://coveralls.io/repos/github/alhazmy13/Angular4-word-cloud/badge.svg?branch=master)](https://coveralls.io/github/alhazmy13/Angular4-word-cloud?branch=master)
-
-
 [![npm version](https://badge.fury.io/js/angular4-word-cloud.svg)](http://badge.fury.io/js/angular4-word-cloud)
 [![devDependency Status](https://david-dm.org/alhazmy13/angular4-word-cloud/dev-status.svg)](https://david-dm.org/alhazmy13/angular4-word-cloud?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/alhazmy13/angular4-word-cloud.svg)](https://github.com/mattlewis92/angular-calendar/issues)
