@@ -5,7 +5,6 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/alhazmy13/Angular4-word-cloud/badge.svg?branch=master)](https://coveralls.io/github/alhazmy13/Angular4-word-cloud?branch=master)
 [![npm version](https://badge.fury.io/js/angular4-word-cloud.svg)](http://badge.fury.io/js/angular4-word-cloud)
-[![devDependency Status](https://david-dm.org/alhazmy13/angular4-word-cloud/dev-status.svg)](https://david-dm.org/alhazmy13/angular4-word-cloud?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/alhazmy13/angular4-word-cloud.svg)](https://github.com/mattlewis92/angular-calendar/issues)
 [![GitHub stars](https://img.shields.io/github/stars/alhazmy13/angular4-word-cloud.svg)](https://github.com/alhazmy13/angular4-word-cloud/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/alhazmy13/angular4-word-cloud/master/LICENSE)
