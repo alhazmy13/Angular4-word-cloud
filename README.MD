@@ -6,6 +6,12 @@
 
 
 # Angular4 Word Cloud
+## Links:
+
++ [Live Demo](https://embed.plnkr.co/hSoU4QbvVmKCdnG9Tw1h/)
++ [Documentation](https://alhazmy13.github.io/Angular4-word-cloud/index.html)
++ [Android Version](https://github.com/alhazmy13/AndroidWordCloud)
+
 
 ## Installation
 
