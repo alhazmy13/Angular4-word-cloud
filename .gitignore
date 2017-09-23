@@ -6,6 +6,7 @@ npm-debug.log
 src/*.js
 src/*.map
 src/*.d.ts
+!src/d3.min.js
 
 # JetBrains
 .idea
