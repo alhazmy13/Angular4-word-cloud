@@ -92,6 +92,7 @@ options = {
 
 - `width` and `height` of canvas, the Default value for width is the width of the container, and the height equals the width * 0.75.
 
+
 ## Troubleshooting
 
 Please follow this guidelines when reporting bugs and feature requests:
