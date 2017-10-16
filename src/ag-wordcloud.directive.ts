@@ -13,19 +13,7 @@ export class AgWordCloudDirective implements OnInit {
 
 	@Input() color: string[] = ['#2BAAE2', '#FF6B8D', '#cecece', '#003E5D', '#22BAA0', '#cecece'];
 
-	@Input() options: AgWordCloudOptions = {
-		settings: {
-			minFontSize: 10,
-			maxFontSize: 100,
-		},
-		margin: {
-			top: 10,
-			right: 10,
-			bottom: 10,
-			left: 10
-		},
-		labels: true // false to hide hover labels
-	};
+	@Input() options: AgWordCloudOptions
 	@Input() width: number;
 	@Input() height: number;
 	private old_min: number;

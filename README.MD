@@ -55,8 +55,29 @@ There are one directive for word cloud: `ag-word-cloud`, to use it just add this
 ```html
 <div AgWordCloud 
 	#word_cloud_chart=ag-word-cloud 
-	[wordData]="word_cloud">
+	[wordData]="word_cloud"
+	 [options]="options">
 	</div>
+```
+
+
+```.ts
+// Create Work Cloud Data Array
+wordData: Array<AgWordCloudData> = [// Words];
+// Word Cloud Options
+options = {
+	settings: {
+		minFontSize: 10,
+		maxFontSize: 100,
+	},
+	margin: {
+		top: 10,
+		right: 10,
+		bottom: 10,
+		left: 10
+	},
+	labels: true // false to hide hover labels
+};
 ```
 
 ### Properties
@@ -67,6 +88,7 @@ There are one directive for word cloud: `ag-word-cloud`, to use it just add this
 - `options` (`?WordCloudOptions`) - word cloud options and there are two object you can pass it `settings` and `margin`.
     - `setting` containes `minFontSize` and `maxFontSize` for word sets.
     - `margin` of canves `top, left, bottom, right`, Default values is 10.
+    - `labels` show Size label at the bottom
 
 - `width` and `height` of canvas, the Default value for width is the width of the container, and the height equals the width * 0.75.
 

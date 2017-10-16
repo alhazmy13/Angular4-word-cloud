@@ -30,9 +30,10 @@
     "url": "https://github.com/alhazmy13/Angular4-word-cloud/issues"
   },
   "devDependencies": {
+    "@angular/cli": "^1.4.7",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
-    "@angular/compiler-cli": "^4.0.0",
+    "@angular/compiler-cli": "^4.4.5",
     "@angular/core": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
