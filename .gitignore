@@ -34,3 +34,4 @@ dist/*
 
 # Playground tmp files
 .playground
+package-lock.json

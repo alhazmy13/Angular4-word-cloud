@@ -1,6 +1,6 @@
 {
   "name": "angular4-word-cloud",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -74,6 +74,7 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
+    "d3": "^4.11.0",
     "plugin-typescript": "^7.1.0"
   }
 }
