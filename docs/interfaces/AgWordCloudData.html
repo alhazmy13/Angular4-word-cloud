@@ -73,6 +73,22 @@
                         </ul>
                     </li>
             
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                        </ul>
+                    </li>
             
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
@@ -129,6 +145,11 @@
                                   <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
                                 </li>
                         </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
                     </li>
             
             
@@ -195,7 +216,22 @@
                                </ul>
                            </li>
                    
-                
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
@@ -254,7 +290,11 @@
                                </ul>
                            </li>
                    
-               
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
                    
                        </ul>
                    
@@ -357,7 +397,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="194" class="link-to-prism">src/ag-wordcloud.directive.ts:194</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="184" class="link-to-prism">src/ag-wordcloud.directive.ts:184</a></div>
                                         </td>
                                     </tr>
 
@@ -390,7 +430,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="193" class="link-to-prism">src/ag-wordcloud.directive.ts:193</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="183" class="link-to-prism">src/ag-wordcloud.directive.ts:183</a></div>
                                         </td>
                                     </tr>
 
@@ -423,7 +463,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="192" class="link-to-prism">src/ag-wordcloud.directive.ts:192</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="182" class="link-to-prism">src/ag-wordcloud.directive.ts:182</a></div>
                                         </td>
                                     </tr>
 
@@ -435,7 +475,7 @@
 
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {
-    Directive, ElementRef, Input, OnInit,
+	Directive, ElementRef, Input, OnInit,
 } from &#x27;@angular/core&#x27;;
 import * as D3 from &#x27;d3&#x27;;
 
@@ -444,190 +484,180 @@ declare let d3: any;
 @Directive({selector: &#x27;div[AgWordCloud]&#x27;, exportAs: &#x27;ag-word-cloud&#x27;})
 export class AgWordCloudDirective implements OnInit {
 
-    @Input() wordData: AgWordCloudData[];
-    temp: Array&lt;AgWordCloudData&gt; &#x3D; [];
+	@Input() wordData: AgWordCloudData[];
+	temp: Array&lt;AgWordCloudData&gt; &#x3D; [];
 
-    @Input() color: string[] &#x3D; [&#x27;#2BAAE2&#x27;, &#x27;#FF6B8D&#x27;, &#x27;#cecece&#x27;, &#x27;#003E5D&#x27;, &#x27;#22BAA0&#x27;, &#x27;#cecece&#x27;];
+	@Input() color: string[] &#x3D; [&#x27;#2BAAE2&#x27;, &#x27;#FF6B8D&#x27;, &#x27;#cecece&#x27;, &#x27;#003E5D&#x27;, &#x27;#22BAA0&#x27;, &#x27;#cecece&#x27;];
 
-    @Input() options: AgWordCloudOptions &#x3D; {
-        settings: {
-            minFontSize: 10,
-            maxFontSize: 100,
-        },
-        margin: {
-            top: 10,
-            right: 10,
-            bottom: 10,
-            left: 10
-        }
-    };
-    @Input() width: number;
-    @Input() height: number;
-    private old_min: number;
-    private old_max: number;
-    private svg: any;
+	@Input() options: AgWordCloudOptions
+	@Input() width: number;
+	@Input() height: number;
+	private old_min: number;
+	private old_max: number;
+	private svg: any;
 
-    private element: ElementRef;
+	private element: ElementRef;
 
-    public constructor(element: ElementRef) {
-        this.element &#x3D; element;
-    }
+	public constructor(element: ElementRef) {
+		this.element &#x3D; element;
+	}
 
-    ngOnInit() {
-        this.setup();
-        this.buildSVG();
-        this.populate();
-    }
+	ngOnInit() {
+		this.setup();
+		this.buildSVG();
+		this.populate();
+	}
 
-    private roundNumber() {
-        const temp &#x3D; this.wordData.map(d &#x3D;&gt; {
-            if (d.color) {
-                return {text: d.text, size: this.scale(d.size), color: d.color};
-            }
-            return {
-                text: d.text,
-                size: this.scale(d.size),
-                color: this.color[Math.floor(Math.random() * this.color.length)]
-            };
+	private roundNumber() {
+		const temp &#x3D; this.wordData.map(d &#x3D;&gt; {
+			if (d.color) {
+				return {text: d.text, size: this.scale(d.size), color: d.color};
+			}
+			return {
+				text: d.text,
+				size: this.scale(d.size),
+				color: this.color[Math.floor(Math.random() * this.color.length)]
+			};
 
-        });
-        this.temp.length &#x3D; 0;
-        this.temp.push(...temp);
-    }
+		});
+		this.temp.length &#x3D; 0;
+		this.temp.push(...temp);
+	}
 
-    private scale(inputY: number): number {
-        const x &#x3D; inputY - this.old_min;
-        const y &#x3D; this.old_max - this.old_min;
-        const percent &#x3D; x / y;
-        return percent * (50 - 10) + 10;
-    }
+	private scale(inputY: number): number {
+		const x &#x3D; inputY - this.old_min;
+		const y &#x3D; this.old_max - this.old_min;
+		const percent &#x3D; x / y;
+		return percent * (50 - 10) + 10;
+	}
 
-    private updateMaxMinValues() {
-        this.old_min &#x3D; Number.MAX_VALUE;
-        this.old_max &#x3D; Number.MIN_VALUE;
-        this.wordData.map(res &#x3D;&gt; {
-            if (res.size &lt; this.old_min) {
-                this.old_min &#x3D; res.size;
-            }
-            if (res.size &gt; this.old_max) {
-                this.old_max &#x3D; res.size;
-            }
-        });
-    }
+	private updateMaxMinValues() {
+		this.old_min &#x3D; Number.MAX_VALUE;
+		this.old_max &#x3D; Number.MIN_VALUE;
+		this.wordData.map(res &#x3D;&gt; {
+			if (res.size &lt; this.old_min) {
+				this.old_min &#x3D; res.size;
+			}
+			if (res.size &gt; this.old_max) {
+				this.old_max &#x3D; res.size;
+			}
+		});
+	}
 
-    private setup() {
-        if (!this.width) {
-            this.width &#x3D; 500 - this.options.margin.right - this.options.margin.left;
-        }
-        if (!this.height) {
-            this.height &#x3D; this.width * 0.75 - this.options.margin.top - this.options.margin.bottom;
-        }
+	private setup() {
+		if (!this.width) {
+			this.width &#x3D; 500 - this.options.margin.right - this.options.margin.left;
+		}
+		if (!this.height) {
+			this.height &#x3D; this.width * 0.75 - this.options.margin.top - this.options.margin.bottom;
+		}
 
 
-    }
+	}
 
-    private buildSVG() {
+	private buildSVG() {
 
-        this.svg &#x3D; D3.select(this.element.nativeElement)
-            .append(&#x27;svg&#x27;)
-            .attr(&#x27;width&#x27;, this.width + this.options.margin.left + this.options.margin.right)
-            .attr(&#x27;height&#x27;, this.height + this.options.margin.top + this.options.margin.bottom)
-            .append(&#x27;g&#x27;)
-            .attr(&#x27;transform&#x27;, &#x27;translate(&#x27; + ~~(this.width / 2) + &#x27;,&#x27; + ~~(this.height / 2) + &#x27;)&#x27;);
-    }
+		this.svg &#x3D; D3.select(this.element.nativeElement)
+		.append(&#x27;svg&#x27;)
+		.attr(&#x27;width&#x27;, this.width + this.options.margin.left + this.options.margin.right)
+		.attr(&#x27;height&#x27;, this.height + this.options.margin.top + this.options.margin.bottom)
+		.append(&#x27;g&#x27;)
+		.attr(&#x27;transform&#x27;, &#x27;translate(&#x27; + ~~(this.width / 2) + &#x27;,&#x27; + ~~(this.height / 2) + &#x27;)&#x27;);
+	}
 
-    private populate() {
-        if (this.svg) {
-            this.svg.selectAll(&#x27;*&#x27;).remove();
-        }
-        this.updateMaxMinValues();
-        this.roundNumber();
-        const fontFace: string &#x3D; (this.options.settings.fontFace &#x3D;&#x3D; null) ? &#x27;Roboto&#x27; : this.options.settings.fontFace;
-        const fontWeight: string &#x3D; (this.options.settings.fontWeight &#x3D;&#x3D; null) ? &#x27;normal&#x27; : this.options.settings.fontWeight;
-        const spiralType: string &#x3D; (this.options.settings.spiral &#x3D;&#x3D; null) ? &#x27;archimedean&#x27; : this.options.settings.spiral;
-        d3.layout.cloud()
-            .size([this.width, this.height])
-            .words(this.temp)
-            .padding(5)
-            .rotate(() &#x3D;&gt; (~~(Math.random() * 2) * 90))
-            .font(fontFace)
-            .fontWeight(fontWeight)
-            .fontSize(d &#x3D;&gt; (d.size))
-            .spiral(spiralType)
-            .on(&#x27;end&#x27;, () &#x3D;&gt; {
-                this.drawWordCloud(this.temp);
-            })
-            .start();
+	private populate() {
+		if (this.svg) {
+			this.svg.selectAll(&#x27;*&#x27;).remove();
+		}
+		this.updateMaxMinValues();
+		this.roundNumber();
+		const fontFace: string &#x3D; (this.options.settings.fontFace &#x3D;&#x3D; null) ? &#x27;Roboto&#x27; : this.options.settings.fontFace;
+		const fontWeight: string &#x3D; (this.options.settings.fontWeight &#x3D;&#x3D; null) ? &#x27;normal&#x27; : this.options.settings.fontWeight;
+		const spiralType: string &#x3D; (this.options.settings.spiral &#x3D;&#x3D; null) ? &#x27;archimedean&#x27; : this.options.settings.spiral;
+		d3.layout.cloud()
+		.size([this.width, this.height])
+		.words(this.temp)
+		.padding(5)
+		.rotate(() &#x3D;&gt; (~~(Math.random() * 2) * 90))
+		.font(fontFace)
+		.fontWeight(fontWeight)
+		.fontSize(d &#x3D;&gt; (d.size))
+		.spiral(spiralType)
+		.on(&#x27;end&#x27;, () &#x3D;&gt; {
+			this.drawWordCloud(this.temp);
+		})
+		.start();
 
-    }
+	}
 
-    private drawWordCloud(words) {
-        const self &#x3D; this;
-        const tooltip &#x3D; D3.select(this.element.nativeElement)
-            .append(&#x27;div&#x27;)
-            .style(&#x27;position&#x27;, &#x27;absolute&#x27;)
-            .style(&#x27;z-index&#x27;, &#x27;10&#x27;)
-            .style(&#x27;visibility&#x27;, &#x27;hidden&#x27;)
-            .text(&#x27;a simple tooltip&#x27;);
+	private drawWordCloud(words) {
+		const self &#x3D; this;
+		const tooltip &#x3D; D3.select(this.element.nativeElement)
+		.append(&#x27;div&#x27;)
+		.style(&#x27;position&#x27;, &#x27;absolute&#x27;)
+		.style(&#x27;z-index&#x27;, &#x27;10&#x27;)
+		.style(&#x27;visibility&#x27;, &#x27;hidden&#x27;)
+		.text(&#x27;a simple tooltip&#x27;);
 
-        this.svg
-            .selectAll(&#x27;text&#x27;)
-            .data(words)
-            .enter()
-            .append(&#x27;text&#x27;)
-            .style(&#x27;font-size&#x27;, d &#x3D;&gt; d.size + &#x27;px&#x27;)
-            .style(&#x27;fill&#x27;, (d, i) &#x3D;&gt; {
-                return d.color;
-            })
-            .attr(&#x27;mdTooltip&#x27;, &#x27;ddd&#x27;)
-            .attr(&#x27;text-anchor&#x27;, &#x27;middle&#x27;)
-            .attr(&#x27;transform&#x27;, d &#x3D;&gt; &#x27;translate(&#x27; + [d.x, d.y] + &#x27;)rotate(&#x27; + d.rotate + &#x27;)&#x27;)
-            .attr(&#x27;class&#x27;, &#x27;word-cloud&#x27;)
-            .on(&#x27;mouseover&#x27;, function (d, i) {
-                return tooltip.style(&#x27;visibility&#x27;, &#x27;visible&#x27;).text(&#x27;Size: &#x27; + self.getWordSize(d.text));
-            })
-            .on(&#x27;mouseout&#x27;, function () {
-                return tooltip.style(&#x27;visibility&#x27;, &#x27;hidden&#x27;);
-            })
-            .text(d &#x3D;&gt; {
-                return d.text;
-            });
-    }
+		this.svg
+		.selectAll(&#x27;text&#x27;)
+		.data(words)
+		.enter()
+		.append(&#x27;text&#x27;)
+		.style(&#x27;font-size&#x27;, d &#x3D;&gt; d.size + &#x27;px&#x27;)
+		.style(&#x27;fill&#x27;, (d, i) &#x3D;&gt; {
+			return d.color;
+		})
+		.attr(&#x27;mdTooltip&#x27;, &#x27;ddd&#x27;)
+		.attr(&#x27;text-anchor&#x27;, &#x27;middle&#x27;)
+		.attr(&#x27;transform&#x27;, d &#x3D;&gt; &#x27;translate(&#x27; + [d.x, d.y] + &#x27;)rotate(&#x27; + d.rotate + &#x27;)&#x27;)
+		.attr(&#x27;class&#x27;, &#x27;word-cloud&#x27;)
+		.on(&#x27;mouseover&#x27;, (d, i) &#x3D;&gt; {
+			return this.options.labels ? tooltip.style(&#x27;visibility&#x27;, &#x27;visible&#x27;).text(&#x27;Size: &#x27; + self.getWordSize(d.text)) : tooltip.style(&#x27;display&#x27;, &#x27;none&#x27;);
+		})
+		.on(&#x27;mouseout&#x27;, function () {
+			return tooltip.style(&#x27;visibility&#x27;, &#x27;hidden&#x27;);
+		})
+		.text(d &#x3D;&gt; {
+			return d.text;
+		});
+	}
 
-    getWordSize(word: string): number {
-        const indexOfWord &#x3D; this.wordData.findIndex(i &#x3D;&gt; i.text &#x3D;&#x3D;&#x3D; word);
-        if (indexOfWord &#x3D;&#x3D;&#x3D; -1) return 0;
-        return this.wordData[indexOfWord].size;
-    }
+	getWordSize(word: string): number {
+		const indexOfWord &#x3D; this.wordData.findIndex(i &#x3D;&gt; i.text &#x3D;&#x3D;&#x3D; word);
+		if (indexOfWord &#x3D;&#x3D;&#x3D; -1) return 0;
+		return this.wordData[indexOfWord].size;
+	}
 
-    public update() {
-        this.populate();
-    }
+	public update() {
+		this.populate();
+	}
 
 
 }
 
 
 export interface AgWordCloudOptions {
-    settings?: {
-        minFontSize?: number,
-        maxFontSize?: number,
-        fontFace?: string,
-        fontWeight?: string,
-        spiral?: string,
-    };
-    margin?: {
-        top: number,
-        right: number,
-        bottom: number,
-        left: number
-    };
+	settings?: {
+		minFontSize?: number,
+		maxFontSize?: number,
+		fontFace?: string,
+		fontWeight?: string,
+		spiral?: string,
+	};
+	margin?: {
+		top: number,
+		right: number,
+		bottom: number,
+		left: number
+	};
+	labels?: boolean;
 }
 
 export interface AgWordCloudData {
-    text: string;
-    size: number;
-    color?: string;
+	text: string;
+	size: number;
+	color?: string;
 }
 
 </code></pre>

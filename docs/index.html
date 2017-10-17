@@ -72,7 +72,23 @@
                                 </li>
                         </ul>
                     </li>
-        
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="./components/AppComponent.html" >AppComponent</a>
+                                </li>
+                        </ul>
+                    </li>
             
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
@@ -132,7 +148,10 @@
                     </li>
             
             
-                
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
             
                 </ul>
             
@@ -197,7 +216,22 @@
                                </ul>
                            </li>
                    
-
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="./components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
@@ -256,7 +290,12 @@
                                </ul>
                            </li>
                    
-                 
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                   
                        </ul>
                    
                    </nav>
@@ -265,9 +304,19 @@
                    <div class="content-data">
 
 <p><img src="https://user-images.githubusercontent.com/4659608/30762233-d4a36136-9fe9-11e7-8788-831558cae077.png" alt="ag-word-cloud" class="img-responsive"></p>
-<p><a href="https://nodei.co/npm/angular4-word-cloud/"><img src="https://nodei.co/npm/angular4-word-cloud.png?compact=true" alt="NPM" class="img-responsive"></a>
-<a href="https://coveralls.io/github/alhazmy13/Angular4-word-cloud?branch=master"><img src="https://coveralls.io/repos/github/alhazmy13/Angular4-word-cloud/badge.svg?branch=master" alt="Coverage Status" class="img-responsive"></a></p>
+<p><a href="https://nodei.co/npm/angular4-word-cloud/"><img src="https://nodei.co/npm/angular4-word-cloud.png?compact=true" alt="NPM" class="img-responsive"></a></p>
+<p><a href="https://coveralls.io/github/alhazmy13/Angular4-word-cloud?branch=master"><img src="https://coveralls.io/repos/github/alhazmy13/Angular4-word-cloud/badge.svg?branch=master" alt="Coverage Status" class="img-responsive"></a>
+<a href="http://badge.fury.io/js/angular4-word-cloud"><img src="https://badge.fury.io/js/angular4-word-cloud.svg" alt="npm version" class="img-responsive"></a>
+<a href="https://github.com/mattlewis92/angular-calendar/issues"><img src="https://img.shields.io/github/issues/alhazmy13/angular4-word-cloud.svg" alt="GitHub issues" class="img-responsive"></a>
+<a href="https://github.com/alhazmy13/angular4-word-cloud/stargazers"><img src="https://img.shields.io/github/stars/alhazmy13/angular4-word-cloud.svg" alt="GitHub stars" class="img-responsive"></a>
+<a href="https://raw.githubusercontent.com/alhazmy13/angular4-word-cloud/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" class="img-responsive"></a></p>
 <h1 id="angular4-word-cloud">Angular4 Word Cloud</h1>
+<h2 id="links-">Links:</h2>
+<ul>
+<li><a href="https://embed.plnkr.co/hSoU4QbvVmKCdnG9Tw1h/">Live Demo</a></li>
+<li><a href="https://alhazmy13.github.io/Angular4-word-cloud/index.html">Documentation</a></li>
+<li><a href="https://github.com/alhazmy13/AndroidWordCloud">Android Version</a></li>
+</ul>
 <h2 id="installation">Installation</h2>
 <p>To install this library, run:</p>
 <pre class="line-numbers"><code class="language-bash">$ npm install angular4-word-cloud --save
@@ -278,19 +327,32 @@ $ npm install d3 --save</code></pre><h2 id="api">API</h2>
 // In your App&#39;s module:
 imports: [
    AgWordCloudModule.forRoot()
-]</code></pre><p>Then add the sources to your code (adjust paths as needed).</p>
-<pre class="line-numbers"><code class="language-html">&lt;head&gt;
-  ...
-&lt;head&gt;
-&lt;body&gt;
-  ...
-&lt;/body&gt;
-  &lt;script src=&quot;node_modules/angular4-word-cloud/d3.min.js&quot;&gt;&lt;/script&gt;</code></pre><h3 id="how-to-use">How to use</h3>
+]</code></pre><p>Then add add the script to <code>.angular-cli.json</code></p>
+<pre class="line-numbers"><code class="language-json">&quot;scripts&quot;: [
+      ***
+        &quot;../node_modules/angular4-word-cloud/d3.min.js&quot;
+      ]</code></pre><h3 id="how-to-use">How to use</h3>
 <p>There are one directive for word cloud: <code>ag-word-cloud</code>, to use it just add this block on your html file:</p>
 <pre class="line-numbers"><code class="language-html">&lt;div AgWordCloud 
     #word_cloud_chart=ag-word-cloud 
-    [wordData]=&quot;word_cloud&quot;&gt;
-    &lt;/div&gt;</code></pre><h3 id="properties">Properties</h3>
+    [wordData]=&quot;word_cloud&quot;
+     [options]=&quot;options&quot;&gt;
+    &lt;/div&gt;</code></pre><pre class="line-numbers"><code class="language-ts">// Create Work Cloud Data Array
+wordData: Array&lt;AgWordCloudData&gt; = [// Words];
+// Word Cloud Options
+options = {
+    settings: {
+        minFontSize: 10,
+        maxFontSize: 100,
+    },
+    margin: {
+        top: 10,
+        right: 10,
+        bottom: 10,
+        left: 10
+    },
+    labels: true // false to hide hover labels
+};</code></pre><h3 id="properties">Properties</h3>
 <ul>
 <li><code>wordData</code> (<code>Array&lt;WordCloudData&gt; | WordCloudData[]</code>) -  set of words, it should be <code>Array&lt;WordCloudData&gt;</code> and each object must have a <code>text</code> and <code>size</code>;</li>
 <li><code>colors</code> (<code>?Array&lt;string&gt; | string[]</code>) - data colors, will use default and|or random colors if not specified.</li>
@@ -298,6 +360,7 @@ imports: [
 <ul>
 <li><code>setting</code> containes <code>minFontSize</code> and <code>maxFontSize</code> for word sets.</li>
 <li><code>margin</code> of canves <code>top, left, bottom, right</code>, Default values is 10.</li>
+<li><code>labels</code> show Size label at the bottom</li>
 </ul>
 </li>
 <li><p><code>width</code> and <code>height</code> of canvas, the Default value for width is the width of the container, and the height equals the width * 0.75.</p>
