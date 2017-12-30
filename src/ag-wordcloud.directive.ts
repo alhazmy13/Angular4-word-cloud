@@ -27,9 +27,7 @@ export class AgWordCloudDirective implements OnInit {
     }
 
     ngOnInit() {
-        this.setup();
-        this.buildSVG();
-        this.populate();
+        this.update();
     }
 
     private roundNumber() {
@@ -83,6 +81,7 @@ export class AgWordCloudDirective implements OnInit {
 
         this.svg = D3.select(this.element.nativeElement)
             .append('svg')
+            .attr('class', 'wordcloud-svg')
             .attr('width', this.width + this.options.margin.left + this.options.margin.right)
             .attr('height', this.height + this.options.margin.top + this.options.margin.bottom)
             .append('g')
@@ -118,6 +117,7 @@ export class AgWordCloudDirective implements OnInit {
         const self = this;
         const tooltip = D3.select(this.element.nativeElement)
             .append('div')
+            .attr('class', 'wordcloud-tooltip')
             .style('position', 'absolute')
             .style('z-index', '10')
             .style('visibility', 'hidden')
@@ -154,10 +154,20 @@ export class AgWordCloudDirective implements OnInit {
     }
 
     public update() {
+        this.removeElementsByClassName('wordcloud-svg');
+        this.removeElementsByClassName('wordcloud-tooltip');
+
+        this.setup();
+        this.buildSVG();
         this.populate();
     }
 
-
+    removeElementsByClassName(classname: string) {
+        const elements = this.element.nativeElement.getElementsByClassName(classname);
+        while (elements.length > 0) {
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+    }
 }
 
 

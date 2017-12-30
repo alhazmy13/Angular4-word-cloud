@@ -92,7 +92,34 @@ options = {
 
 - `width` and `height` of canvas, the Default value for width is the width of the container, and the height equals the width * 0.75.
 
+### To Update it dynamically 
+First of all you need to add a reference for your div:
 
+```html
+<div WordCloud #word_cloud_chart=word-cloud [wordData]="word_cloud" [height]="300"></div>
+```
+
+Update your component to this:
+
+```.ts
+export class MyComponent implements ..... {
+...
+	@ViewChild('word_cloud_chart') word_cloud_chart: WordCloudDirective;
+	word_cloud: Array<WordCloudData> = [];
+.....
+	updateWordCloud(wordCloud: WordCloud) {
+		this.word_cloud.length = 0;
+		const temp = wordCloud.words.map(res => {
+			return {text: res.word, size: res.score};
+		});
+    	this.word_cloud.push(...temp);
+		setTimeout(() => {
+			this.word_cloud_chart.update();
+		});
+	}
+```
+
+When ever you ready just call `updateWordCloud` .
 ## Troubleshooting
 
 Please follow this guidelines when reporting bugs and feature requests:
