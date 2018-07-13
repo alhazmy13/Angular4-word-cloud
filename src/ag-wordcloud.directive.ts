@@ -51,7 +51,7 @@ export class AgWordCloudDirective implements OnInit {
     const min = this.options.settings.minFontSize || 10;
     const x = inputY - this.old_min;
     const y = this.old_max - this.old_min;
-    const percent = x / y;
+    const percent = y === 0 ? 0 : x / y;
     return percent * (max - min) + min;
   }
 
