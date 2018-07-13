@@ -18,6 +18,9 @@ src/*.d.ts
 # VS Code
 .vscode/*
 
+# Visual Studio
+.vs/*
+
 # Windows
 Thumbs.db
 Desktop.ini
@@ -35,3 +38,4 @@ dist/*
 # Playground tmp files
 .playground
 package-lock.json
+
