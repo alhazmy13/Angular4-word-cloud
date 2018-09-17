@@ -13,7 +13,7 @@ export class AgWordCloudDirective implements OnInit {
 
     @Input() color: string[] = ['#2BAAE2', '#FF6B8D', '#cecece', '#003E5D', '#22BAA0', '#cecece'];
 
-    @Input() options: AgWordCloudOptions
+    @Input() options: AgWordCloudOptions;
     @Input() width: number;
     @Input() height: number;
     private old_min: number;
@@ -78,7 +78,6 @@ export class AgWordCloudDirective implements OnInit {
     }
 
     private buildSVG() {
-
         this.svg = D3.select(this.element.nativeElement)
             .append('svg')
             .attr('class', 'wordcloud-svg')
@@ -137,7 +136,8 @@ export class AgWordCloudDirective implements OnInit {
             .attr('transform', d => 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')')
             .attr('class', 'word-cloud')
             .on('mouseover', (d, i) => {
-                return this.options.labels ? tooltip.style('visibility', 'visible').text('Size: ' + self.getWordSize(d.text)) : tooltip.style('display', 'none');
+                return this.options.labels ? tooltip.style('visibility', 'visible')
+                    .text('Size: ' + self.getWordSize(d.text)) : tooltip.style('display', 'none');
             })
             .on('mouseout', function () {
                 return tooltip.style('visibility', 'hidden');
@@ -149,7 +149,9 @@ export class AgWordCloudDirective implements OnInit {
 
     getWordSize(word: string): number {
         const indexOfWord = this.wordData.findIndex(i => i.text === word);
-        if (indexOfWord === -1) return 0;
+        if (indexOfWord === -1) {
+            return 0;
+        }
         return this.wordData[indexOfWord].size;
     }
 
