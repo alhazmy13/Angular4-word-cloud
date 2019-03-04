@@ -5,7 +5,7 @@ import * as D3 from 'd3';
 
 declare let d3: any;
 
-type RotationFunction = () => number;
+export type RotationFunction = () => number;
 
 @Directive({selector: 'div[AgWordCloud]', exportAs: 'ag-word-cloud'})
 export class AgWordCloudDirective implements OnInit {
