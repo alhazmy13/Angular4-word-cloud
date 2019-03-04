@@ -5,6 +5,8 @@ import * as D3 from 'd3';
 
 declare let d3: any;
 
+type RotationFunction = () => number;
+
 @Directive({selector: 'div[AgWordCloud]', exportAs: 'ag-word-cloud'})
 export class AgWordCloudDirective implements OnInit {
 
@@ -28,6 +30,17 @@ export class AgWordCloudDirective implements OnInit {
 
     ngOnInit() {
         this.update();
+    }
+
+    private getTextRotation():number | RotationFunction {
+        const defaultRotation = () => ~~(Math.random() * 2) * 90;
+        try {
+            return this.options.settings.hasOwnProperty("textRotation")
+            ? this.options.settings.textRotation
+            : defaultRotation;
+        } catch (err) {
+            return defaultRotation;
+        }
     }
 
     private roundNumber() {
@@ -101,7 +114,7 @@ export class AgWordCloudDirective implements OnInit {
             .size([this.width, this.height])
             .words(this.temp)
             .padding(5)
-            .rotate(() => (~~(Math.random() * 2) * 90))
+            .rotate(this.getTextRotation())
             .font(fontFace)
             .fontWeight(fontWeight)
             .fontSize(d => (d.size))
@@ -178,6 +191,7 @@ export interface AgWordCloudOptions {
         fontFace?: string,
         fontWeight?: string,
         spiral?: string,
+        textRotation?: number | RotationFunction
     };
     margin?: {
         top: number,
