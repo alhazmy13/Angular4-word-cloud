@@ -69,6 +69,7 @@ options = {
 	settings: {
 		minFontSize: 10,
 		maxFontSize: 100,
+		textRotation: 0 // see below
 	},
 	margin: {
 		top: 10,
@@ -86,9 +87,13 @@ options = {
 - `wordData` (`Array<WordCloudData> | WordCloudData[]`) -  set of words, it should be `Array<WordCloudData>` and each object must have a `text` and `size`;
 - `colors` (`?Array<string> | string[]`) - data colors, will use default and|or random colors if not specified.
 - `options` (`?WordCloudOptions`) - word cloud options and there are two object you can pass it `settings` and `margin`.
-    - `setting` containes `minFontSize` and `maxFontSize` for word sets.
-    - `margin` of canves `top, left, bottom, right`, Default values is 10.
-    - `labels` show Size label at the bottom
+    * `settings`
+			- `minFontSize`
+			- `maxFontSize`
+			- `textRotation` (`?number | RotationFunction`):
+				accepts a number (angle) which all words in the cloud will be rotated at (ie 0 means no rotation). Alternatively a function can be passed which returns a number (to be called on each word in the cloud)
+    * `margin` of canvas `top, left, bottom, right`, Default values is 10.
+    * `labels` show Size label at the bottom
 
 - `width` and `height` of canvas, the Default value for width is the width of the container, and the height equals the width * 0.75.
 
