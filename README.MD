@@ -92,6 +92,18 @@ options = {
 
 - `width` and `height` of canvas, the Default value for width is the width of the container, and the height equals the width * 0.75.
 
+### Events
+
+ - `wordClick` Returns the word clicked
+
+ It can be setted as:
+
+ <div AgWordCloud
+   [wordData]="wordData"
+   [options]="options"
+   (wordClick)="onWordCloudClick($event)" >
+ </div>
+
 ### To Update it dynamically 
 First of all you need to add a reference for your div:
 
