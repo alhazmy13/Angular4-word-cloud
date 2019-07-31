@@ -1,5 +1,5 @@
 import {
-    Directive, ElementRef, Input, OnInit,
+    Directive, ElementRef, Input, Output, OnInit, EventEmitter
 } from '@angular/core';
 import * as D3 from 'd3';
 
@@ -16,6 +16,8 @@ export class AgWordCloudDirective implements OnInit {
     @Input() options: AgWordCloudOptions
     @Input() width: number;
     @Input() height: number;
+    @Output() wordClick = new EventEmitter();
+
     private old_min: number;
     private old_max: number;
     private svg: any;
@@ -141,6 +143,9 @@ export class AgWordCloudDirective implements OnInit {
             })
             .on('mouseout', function () {
                 return tooltip.style('visibility', 'hidden');
+            })
+            .on('click', function (d, i) {
+                self.wordClick.emit(d.text);
             })
             .text(d => {
                 return d.text;
