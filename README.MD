@@ -34,6 +34,9 @@ $ npm install d3 --save
 
 
 // In your App's module:
+
+import {AgWordCloudModule} from 'angular4-word-cloud';
+
 imports: [
    AgWordCloudModule.forRoot()
 ]
